@@ -1,0 +1,8 @@
+.outer{
+  width: fit-content;
+  height: fit-content;
+  margin: 12% auto;
+  padding: 3%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}

@@ -1,0 +1,42 @@
+<!-- <p>quicksearch works!</p>
+<h1>{{type}}</h1> -->
+
+<div class="page">
+  <h1>{{title | titlecase}}</h1>
+
+  <div class="flexbox">
+      <div class="databox" *ngFor="let tsp of tsplist" [routerLink]="['/singletsp',tsp._id]">
+        <div class="innerflex">
+          <img class="mr-2" src="../../assets/homeimg2.jpg">
+          <div>
+            <label class="title">{{ tsp.title | titlecase }}</label>
+            <br>
+            <span>{{ tsp.area |titlecase }}</span>
+            <br>
+            <label>{{ tsp.address }}</label>
+          </div>
+          <label class="rating" [ngClass]="{
+              'bgclr1': tsp.ratings >4 && tsp.ratings <5,
+              'bgclr2': tsp.ratings >3 && tsp.ratings <=4,
+              'bgclr3': tsp.ratings >2 && tsp.ratings <=3,
+              'bgclr4': tsp.ratings <=2
+            }">{{ tsp.ratings | number:'1.1-2' }}</label>
+        </div>
+        <hr>
+        <div>
+          <label for="">Serves: </label><span class="ml-4">{{ tsp.serves }}</span>
+          <br>
+          <label for="">Hours: </label><span class="ml-4">{{ tsp.timings }}</span>
+          <!-- <span style="float: right;">{{available}}</span> -->
+          <br>
+          <!-- <label for="">Discount: </label><span class="ml-4">5% off on all orders</span> -->
+        </div>
+        <hr>
+        <div>
+          <label>{{ tsp.contactNo }}</label>
+          <button style="float: right;" mat-button color="accent">Order-Now</button>
+        </div>
+      </div>
+  </div>
+
+</div>

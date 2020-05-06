@@ -1,0 +1,48 @@
+
+<div class="bg-home">
+  <div class="name center">
+    <h1>cibo</h1>
+  </div>
+  <h2>Find the Tiffin service provider to have homemade food</h2>
+</div>
+
+<p>In this fast developing world people often choose to migrate to cities in order to get better studies and employment opportunities. Therefore, they tend to incline towards restaurants for their daily supplements. Individuals do not find it feasible to eat this kind of food on a regular basis because it is expensive as well as it may be malign sometimes.
+  <i>Here we are having a website which provides you details of your nearby Tiffin providers from where you can get homemade food.</i>
+</p>
+<br><br>
+
+<h2 style="margin:2% 5%;">Quick Search</h2>
+<div class="quickbox">
+  <a  routerLink="/search/Breakfast">Brekfast</a>
+  <a  routerLink="/search/Lunch">Lunch</a>
+  <a  routerLink="/search/Dinner">Dinner</a>
+  <a  routerLink="/search/Jain">Jain</a>
+  <a  routerLink="/search/Swaminarayan">Swaminarayan</a>
+</div>
+
+<div class="collection">
+  <h2>Collections</h2>
+  <div class="flexbox">
+    <mat-card  routerLink="/filter/HighRate">
+      <img id="cardimg" mat-card-image src="../../../assets/homeimg3.jpg">
+      <mat-card-title>High Rated</mat-card-title>
+      <mat-card-subtitle>The hunt for the highest-rated Tiffin service providers in your city</mat-card-subtitle>
+    </mat-card>
+    <mat-card routerLink="/filter/NewOne">
+      <img id="cardimg" mat-card-image src="../../../assets/homeimg4.jpg">
+      <mat-card-title>Newly Opened</mat-card-title>
+      <mat-card-subtitle>New Tiffin providers</mat-card-subtitle>
+    </mat-card>
+    <mat-card routerLink="/filter/Trending">
+      <img id="cardimg" mat-card-image src="../../../assets/homeimg5.jpg">
+      <mat-card-title>Trendnig This Week</mat-card-title>
+      <mat-card-subtitle>Most popular Tiffin providers this week.</mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>
+<div class="tags">
+  <div><label>{{nooftsp}}</label><br><label>TSP</label></div>
+  <div><label>{{noofusers}}</label><br><label>USERS</label></div>
+  <div><label>{{totalorders}}</label><br><label>ORDERS</label></div>
+</div>
+<!-- <button (click)="find()">click count</button> -->

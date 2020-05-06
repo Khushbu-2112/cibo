@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Register</h2>
+<mat-dialog-content [formGroup]="registerform">
+
+  <mat-form-field>
+    <mat-label>Contact No</mat-label>
+    <input matInput minlength="10" maxlength="10" placeholder="Ex. 987-845-1245" [errorStateMatcher]="matcher" formControlName="contactNo">
+    <mat-icon matSuffix>phone</mat-icon>
+    <mat-error *ngIf="contactNo.hasError('length') && !contactNo.hasError('required')">
+      Please enter a valid Contact No.
+    </mat-error>
+    <mat-error *ngIf="contactNo.hasError('required')">
+      Contact No is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. example5@gmail.com" [errorStateMatcher]="matcher" formControlName="email">
+      <mat-icon matSuffix>mail</mat-icon>
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid Email.
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+      <br>
+
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="" [errorStateMatcher]="matcher" formControlName="address">
+    <mat-icon matSuffix>my_location</mat-icon>
+    <mat-error *ngIf="address.hasError('required')">
+      Address is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="" [type]=" hide?'password':'text' " [errorStateMatcher]="matcher" formControlName="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="password.hasError('length') && !password.hasError('required')">
+      Please enter a valid Password.
+    </mat-error>
+    <mat-error *ngIf="password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" [disabled]="registerform.invalid" (click)="onSubmit()">Submit</button>
+    <button class="mat-stroked-button ml-2" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions >

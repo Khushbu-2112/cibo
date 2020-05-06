@@ -1,0 +1,40 @@
+<!-- <p>singletsp works!</p> -->
+<!-- {{tspId}} -->
+<div class="container">
+  <div class="singletsp" *ngIf="loaded">
+    <div class="flx">
+      <img src="../../assets/image2thali.jpg" alt="Image">
+      <div class="data">
+        <h1>{{ tspdetails.title }}</h1>
+        <label>{{ tspdetails.area | titlecase }}</label>
+        <br><br>
+        <span>Open -  {{ tspdetails.timings }}</span>
+        <br><br>
+        <label>  {{ tspdetails.contactNo }}</label>
+        <br><br>
+        <label for="">Total-orders:</label><span class="ml-4">{{ orders }}</span>
+        <br><br>
+        <label for="">Combos:</label><span class="ml-4">{{ menulist.length }}</span>
+      </div>
+      <label class="rating" [ngClass]="{
+        'bgclr1': tspdetails.ratings >4 && tspdetails.ratings <5,
+        'bgclr2': tspdetails.ratings >3 && tspdetails.ratings <=4,
+        'bgclr3': tspdetails.ratings >2 && tspdetails.ratings <=3,
+        'bgclr4': tspdetails.ratings <=2
+      }">{{ tspdetails.ratings | number:'1.1-2' }}</label>
+    </div>
+    <br>
+    <div class="flx2">
+      <div class="case" *ngFor="let menu of menulist">
+        <span>{{menu.name}}</span> - <label for="">{{menu.menuType}}</label> <br>
+        <label>{{menu.items}}</label><br><br>
+        <span>Rs. {{ menu.price }}</span>
+        <button mat-stroked-button color="accent" (click)="addbtn(menu);disbtn.disabled = true" #disbtn class="add">Add +</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button style="float: right;" routerLink="/cart" [hidden]="!btncheck" color="warn" mat-raised-button>View Cart</button>
+  <br>
+  <br>
+</div>

@@ -1,0 +1,27 @@
+<!-- <p>cart works!</p> -->
+<br>
+<div class="container">
+  <h1>Your Cart</h1>
+  <p>Your cart data will be lost if you don't order and perform another action</p>
+  <div class="flx">
+      <div *ngFor="let order of orders" class="datadiv">
+        <div  class="m-2">
+          <span>{{ order.name }}</span> - <label for="">{{ order.menuType }}</label>
+          <br>
+          <label for="">{{ order.items }}</label>
+          <br>
+          <span>{{ order.price }}</span>
+        </div>
+        <div class="flx2">
+          <mat-icon [hidden]="order.count == 0" (click)="order.count=order.count-1">remove</mat-icon>
+          <label style="color: black;" for="">{{ order.count }}</label>
+          <mat-icon (click)="order.count = order.count+1">add</mat-icon>
+        </div>
+      </div>
+  </div>
+  <button (click)="orderNow()" style="float: right;height: fit-content;" color="primary" mat-raised-button>Order Now</button>
+  <br><br>
+  <div *ngIf="mar">
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+</div>

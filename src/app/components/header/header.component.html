@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink="/" style="font-size: 20px;" >Cibo &nbsp;<q> Happiness is Homemade </q></button>
+    <div class="space"></div>
+    <!-- <button routerLink="login" mat-button>Sign-In</button> -->
+
+    <!-- <button *ngIf="auth.isLoggedIn()" mat-button>{{ auth.getUserDetails().contactNo }}</button> -->
+    <button mat-button *ngIf="auth.isLoggedIn()" [matMenuTriggerFor]="menu">{{ auth.getUserDetails().contactNo }}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/profile">Profile</button>
+      <button mat-menu-item routerLink="/yourorders">Your Orders</button>
+      <!-- <button mat-menu-item routerLink="/cart">Cart
+        <mat-icon  matBadge="4" matBadgeSize="small" matBadgeColor="accent" >shopping_cart</mat-icon>
+      </button> -->
+      <button *ngIf="auth.isLoggedIn()" mat-button (click)="auth.logout()">Log-out</button>
+    </mat-menu>
+    <button *ngIf="!auth.isLoggedIn()" mat-button (click)="openDialogLogin()">Sign-In</button>
+    <button *ngIf="!auth.isLoggedIn()" mat-button (click)="openDialogRegister()">Sign-Up</button>
+  </mat-toolbar-row>
+  <!-- <div class="text-center" style="color: white;background: red;">{{ loginmsg }}</div> -->
+</mat-toolbar>
+<router-outlet></router-outlet>

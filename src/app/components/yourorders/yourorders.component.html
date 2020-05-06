@@ -1,0 +1,31 @@
+<!-- <p>yourorders works!</p> -->
+
+<div class="container">
+  <br>
+  <h1 *ngIf="orderdata.length>0">Your Orders</h1>
+  <div *ngIf="spin" class="overlay">
+    <div class="center">
+      <mat-spinner *ngIf="spin" color="accent" diameter="50"></mat-spinner>
+    </div>
+  </div>
+  <div *ngIf="orderdata.length == 0;">
+    <p class="text-center">Your order list is empty Make some orders to see this.</p>
+  </div>
+  <ng-container *ngIf="orderdata.length>0">
+    <div class="order" *ngFor="let orderi of orderdata">
+      <div>
+        <span class="name">{{ orderi.name }}</span>
+        <br>
+        <label>{{ orderi.items }}</label>
+      </div>
+      <label for="">{{ orderi.orderedOn | date }}</label>
+      <span>{{ orderi.totalAmount }}</span>
+      <span [ngClass]="{
+        'text-primary':orderi.status == 'Pending',
+        'text-warning':orderi.status == 'Canceled',
+        'text-success':orderi.status == 'Confirmed',
+        'text-muted':orderi.status == 'Delivered'
+      }">{{ orderi.status }}</span>
+    </div>
+  </ng-container>
+</div>

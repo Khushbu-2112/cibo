@@ -1,0 +1,30 @@
+.flx{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.datadiv{
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 2%;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+span{
+  color: rgb(51, 49, 49);
+  font-size: 20px;
+}
+
+label{
+  color: rgb(87, 85, 85);
+  font-size: 18px;
+}
+
+.flx2{
+  display: flex;
+  /* background-color: rgb(214, 78, 135); */
+  justify-content: space-between;
+  color: #FF40B1;
+}

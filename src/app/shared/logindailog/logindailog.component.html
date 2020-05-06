@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Login</h2>
+<!-- <mat-divider></mat-divider> -->
+<mat-dialog-content [formGroup]="loginForm">
+
+  <mat-form-field>
+    <mat-label>Contact No</mat-label>
+    <input matInput placeholder="Ex. 987-845-1245" [errorStateMatcher]="matcher" formControlName="contactNo">
+    <mat-error *ngIf="contactNo.hasError('length') && !contactNo.hasError('required')">
+      Please enter a valid Contact No.
+    </mat-error>
+    <mat-error *ngIf="contactNo.hasError('required')">
+      Contact No is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+    <br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="" [errorStateMatcher]="matcher" formControlName="password">
+    <mat-error *ngIf="password.hasError('length') && !password.hasError('required')">
+      Please enter a valid Password.
+    </mat-error>
+    <mat-error *ngIf="password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="onLogin()">Login</button>
+    <button class="mat-stroked-button ml-4" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions >

@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif;} */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+
+.center{
+  margin: 0 auto;
+}
+
+.box{
+  text-align: center;
+  background-color: rgb(72, 72, 192);
+  color: white;
+  border: 1px solid red;
+  padding:4%;
+  margin: 11% auto;
+  width: fit-content;
+  border-radius: 8px;
+}

@@ -1,0 +1,63 @@
+.page{
+  padding:5%;
+}
+
+.flexbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.innerflex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.databox{
+  width: 370px;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 2%;
+  box-shadow: 0px 2px 2px #CCC;
+}
+
+.databox label{
+  color: rgb(138, 132, 132);
+}
+
+.databox img{
+  min-width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.title{
+  font-size: 20px;
+  color: rgb(160, 19, 19) !important;
+}
+
+.rating{
+  /* background: green; */
+  height: fit-content;
+  padding:2px 5px;
+  border-radius: 5px;
+  color: white !important;
+}
+
+.bgclr1{
+  background-color: rgb(3, 112, 3);
+}
+
+.bgclr2{
+  background-color: rgb(42, 185, 42);
+}
+
+.bgclr3{
+  background-color: rgb(131, 206, 131);
+  color: black ;
+}
+
+.bgclr4{
+  background-color: rgb(219, 241, 219);
+  color: black !important;
+}
